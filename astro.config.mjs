@@ -6,8 +6,20 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
+	site: 'https://longhuynh.dev',
 	integrations: [mdx(), sitemap()],
+	vite: {
+		server: {
+			// Allow giscus' iframe to load /giscus-theme.css in dev
+			// (keeps Vite's default localhost origins).
+			cors: {
+				origin: [
+					/^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/,
+					'https://giscus.app',
+				],
+			},
+		},
+	},
 	fonts: [
 		{
 			provider: fontProviders.local(),
