@@ -1,0 +1,45 @@
+<section class="comments">
+    <div class="giscus"></div>
+</section>
+
+<script>
+    // Inject giscus at runtime so the custom theme URL uses the current origin
+    // (works on both localhost and production without hard-coding a domain).
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.crossOrigin = "anonymous";
+
+    Object.entries({
+        repo: "suikadev01/my-blog",
+        repoId: "R_kgDOT_6mRg",
+        category: "Announcements",
+        categoryId: "DIC_kwDOT_6mRs4DHPQ2",
+        mapping: "pathname",
+        strict: "0",
+        reactionsEnabled: "1",
+        emitMetadata: "0",
+        inputPosition: "bottom",
+        theme: new URL("/giscus-theme.css", location.origin).href,
+        lang: "vi",
+    }).forEach(([key, value]) => (script.dataset[key] = value));
+
+    document.querySelector(".comments")?.appendChild(script);
+</script>
+
+<style>
+    .comments {
+        width: 720px;
+        max-width: calc(100% - 2em);
+        margin: 3em auto 0;
+        padding: 1em;
+        border-top: 1px solid rgb(var(--gray-light));
+    }
+
+    /* giscus creates these elements at runtime, so they need :global */
+    .comments :global(.giscus),
+    .comments :global(.giscus-frame) {
+        display: block;
+        width: 100%;
+    }
+</style>
