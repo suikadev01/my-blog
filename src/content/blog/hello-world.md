@@ -7,9 +7,8 @@ pubDate: '2026-08-22'
 ```c
 #include <stdio.h>
 
-int main() {
-    printf("Hello World");
-    return 1;
+int main(void) {
+    printf("Hello World!\n");
 }
 ```
 Chương trình in ra dòng chữ `Hello World` bằng `C`, là chương trình đầu tiên mình đã viết ra khi mới bước chân vào Đại học. Và có lẽ cũng là chương trình đầu tiên của nhiều bạn học sinh, sinh viên khi vừa mới học lập trình. Sau này khi mình được tiếp xúc, tự tìm hiểu thêm các ngôn ngữ lập trình khác như `Csharp`, `Python`,... Thì chương trình `Hello World` vẫn luôn là chương trình đầu tiên mình được học, viết ra bằng các ngôn ngữ đó.
